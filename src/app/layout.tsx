@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Oswald } from 'next/font/google';
 import './globals.css';
+import ScrollToTop from '@/components/ui/scroll-to-top';
 
 const oswaldSans = Oswald({
   variable: '--font-oswald',
@@ -19,7 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`scroll-smooth ${oswaldSans.className}`}>
-      <body className={`${oswaldSans}`}>{children}</body>
+      <body className={`${oswaldSans}`}>
+        {children}
+        <ScrollToTop />
+      </body>
     </html>
   );
 }
