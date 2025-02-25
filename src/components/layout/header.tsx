@@ -34,7 +34,7 @@ const Header = () => {
     handleScroll(); // Initialize on mount
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [nav]);
 
   return (
     <header className="w-full h-14 fixed top-0 bg-black bg-opacity-80 shadow z-10">
