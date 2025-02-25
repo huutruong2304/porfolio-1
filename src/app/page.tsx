@@ -15,7 +15,7 @@ export default function Home() {
     lastName: 'Nguyen',
     role: 'Front end developer',
     avatar: '/images/me.jpg',
-    description: ` Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC,
+    description: `Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC,
                 making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more
                 obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature,
                 discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The
@@ -80,7 +80,7 @@ export default function Home() {
           className="w-full h-screen bg-[url(/images/background-mobile.jpg)] lg:bg-[url(/images/background-pc.jpg)] bg-fixed bg-no-repeat bg-cover bg-center relative"
         >
           {/* info */}
-          <div className="container md:px-20 mx-auto h-full flex items-center justify-start z-10 ">
+          <div className="container px-10 md:px-20 mx-auto h-full flex items-center justify-start z-10 ">
             <div className="flex flex-col gap-2">
               <h2 className="text-5xl text-white">{info.lastName}</h2>
               <h1 className="font-bold text-8xl text-white">{info.fistName}</h1>
@@ -88,7 +88,7 @@ export default function Home() {
             </div>
           </div>
           {/* social link */}
-          <div className="absolute w-full container md:px-20 bottom-10 social-link flex gap-6 ">
+          <div className="absolute w-full container px-10 md:px-20 bottom-10 left-1/2 -translate-x-1/2 social-link flex gap-6 ">
             <SocialLink>
               <FaYoutube size={30} />
             </SocialLink>
@@ -103,7 +103,7 @@ export default function Home() {
             </SocialLink>
           </div>
         </section>
-        <section id="about" className="h-[800px] bg-black">
+        <section id="about" className="h-[820px] bg-black px-10 md:px-20 ">
           <SectionContent classes="flex-wrap justify-center items-center">
             <div className="w-full lg:w-1/2 flex justify-center">
               <Avatar src={info.avatar} />
@@ -114,13 +114,13 @@ export default function Home() {
             </div>
           </SectionContent>
         </section>
-        <section id="skills" className="h-[800px] bg-black">
+        <section id="skills" className="h-[800px] bg-black px-10 md:px-20">
           <SectionContent classes="flex-col justify-center">
             <SectionTitle>My skills</SectionTitle>
             <SkillBoard amountYear="4+" skills={info.skills} />
           </SectionContent>
         </section>
-        <section id="project" className="h-[800px] bg-black ">
+        <section id="project" className="h-[800px] bg-black px-10 md:px-20">
           <SectionContent classes="flex-col justify-center">
             <SectionTitle>Project</SectionTitle>
             <div className="w-full h-96 flex overflow-auto gap-6">
@@ -130,11 +130,11 @@ export default function Home() {
             </div>
           </SectionContent>
         </section>
-        <section id="contact" className="h-[400px] bg-black">
-          <SectionContent classes="flex-col gap-2">
+        <section id="contact" className="h-[800px] bg-black px-10 md:px-20">
+          <SectionContent classes="flex-col justify-center gap-2 ">
             <SectionTitle>Contact me</SectionTitle>
             <ContactRow title="Phone" content="+84 88888888" />
-            <ContactRow title="Github" content="your.email@mail.com" href="mailto:your.email@example.com" />
+            <ContactRow title="Email" content="your.email@mail.com" href="mailto:your.email@example.com" />
             <ContactRow title="LinkedIn" content="Truong Nguyen" href="#" />
             <ContactRow title="Github" content="Truongnguyen" href="#" />
           </SectionContent>
