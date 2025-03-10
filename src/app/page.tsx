@@ -72,7 +72,7 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full overflow-x-hidden">
       <Header />
       <main className="min-h-screen">
         <section
@@ -103,7 +103,7 @@ export default function Home() {
             </SocialLink>
           </div>
         </section>
-        <section id="about" className="h-[820px] bg-black px-10 md:px-20 ">
+        <section id="about" className="min-h-screen md:h-[820px] bg-black px-10 md:px-20 py-20">
           <SectionContent classes="flex-wrap justify-center items-center">
             <div className="w-full lg:w-1/2 flex justify-center">
               <Avatar src={info.avatar} />
@@ -114,13 +114,13 @@ export default function Home() {
             </div>
           </SectionContent>
         </section>
-        <section id="skills" className="h-[800px] bg-black px-10 md:px-20">
+        <section id="skills" className="h-auto md:h-[800px] bg-black px-10 md:px-20 py-20">
           <SectionContent classes="flex-col justify-center">
             <SectionTitle>My skills</SectionTitle>
             <SkillBoard amountYear="4+" skills={info.skills} />
           </SectionContent>
         </section>
-        <section id="project" className="h-[800px] bg-black px-10 md:px-20">
+        <section id="project" className="h-auto md:h-[800px] bg-black px-10 md:px-20 py-20">
           <SectionContent classes="flex-col justify-center">
             <SectionTitle>Project</SectionTitle>
             <div className="w-full h-96 flex overflow-auto gap-6">
@@ -130,7 +130,7 @@ export default function Home() {
             </div>
           </SectionContent>
         </section>
-        <section id="contact" className="h-[800px] bg-black px-10 md:px-20">
+        <section id="contact" className="h-auto md:h-[800px] bg-black px-10 md:px-20 py-20">
           <SectionContent classes="flex-col justify-center gap-2 ">
             <SectionTitle>Contact me</SectionTitle>
             <ContactRow title="Phone" content="+84 88888888" />
