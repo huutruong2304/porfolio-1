@@ -9,7 +9,7 @@ import ProjectCard from '@/components/project-card';
 import Footer from '@/components/layout/footer';
 import ContactRow from '@/components/contact-row';
 
-export default function Home() {
+export default function HomePage() {
   const info = {
     fistName: 'Truong',
     lastName: 'Nguyen',
