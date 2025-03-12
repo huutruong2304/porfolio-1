@@ -3,23 +3,26 @@ import Image from 'next/image';
 import React from 'react';
 import { motion } from 'motion/react';
 
-type Props = {
+export interface Project {
+  id: string;
   image: string;
   name: string;
   description: string;
-};
+}
+
+type Props = Omit<Project, 'id'>;
 
 const ProjectCard = ({ name, image, description }: Props) => {
   return (
     <motion.div
-      className="w-52 h-80 flex-none bg-opacity-30 shadow rounded-lg overflow-hidden"
+      className="w-full h-max flex-none bg-opacity-30 shadow rounded-lg overflow-hidden"
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
       whileHover={{ scale: 1.05, boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.3)' }}
     >
       {/* Image Section with Hover Effect */}
-      <motion.div className="relative w-full h-4/5 overflow-hidden">
+      <motion.div className="relative w-full h-60 lg:h-72 overflow-hidden">
         <motion.div className="absolute inset-0" whileHover={{ scale: 1.1 }} transition={{ duration: 0.3 }}>
           <Image src={image} className="object-cover rounded-lg" alt={name} fill />
         </motion.div>

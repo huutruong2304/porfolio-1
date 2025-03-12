@@ -5,11 +5,11 @@ import SectionTitle from '@/components/section-title';
 import SocialLink from '@/components/ui/social-link';
 import { FaFacebookF, FaInstagramSquare, FaTiktok, FaYoutube } from 'react-icons/fa';
 import SkillBoard from '@/components/skill-board';
-import ProjectCard from '@/components/project-card';
 import Footer from '@/components/layout/footer';
 import ContactRow from '@/components/contact-row';
 import FadeInSection from '@/components/motion/fade-in-section';
 import InfoComponent from '@/components/info-component';
+import ProjectCarousel from '@/components/project-carousel';
 
 export default function Home() {
   const info = {
@@ -99,14 +99,14 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="about" className="min-h-screen md:h-[820px] bg-black px-10 md:px-20 py-20">
+        <section id="about" className="h-[820px] bg-black px-10 md:px-20">
           <SectionContent className="flex-wrap justify-center items-center">
-            <div className="w-full lg:w-1/2 flex justify-center">
+            <div className="mt-20 lg:mt-0 w-full lg:w-1/2 h-fit flex justify-center">
               <FadeInSection>
                 <Avatar src={info.avatar} />
               </FadeInSection>
             </div>
-            <div className="w-full mt-20 lg:mt-0 lg:w-1/2">
+            <div className="w-full lg:w-1/2">
               <FadeInSection>
                 <SectionTitle>About me</SectionTitle>
               </FadeInSection>
@@ -116,7 +116,7 @@ export default function Home() {
             </div>
           </SectionContent>
         </section>
-        <section id="skills" className="h-auto md:h-[800px] bg-black px-10 md:px-20 py-20">
+        <section id="skills" className="h-[800px] bg-black px-10 md:px-20 py-20">
           <SectionContent className="flex-col justify-center">
             <FadeInSection>
               <SectionTitle>My skills</SectionTitle>
@@ -124,21 +124,19 @@ export default function Home() {
             <SkillBoard amountYear="4+" skills={info.skills} />
           </SectionContent>
         </section>
-        <section id="project" className="h-auto md:h-[800px] bg-black px-10 md:px-20 py-20">
-          <SectionContent className="flex-col justify-center">
+        <section id="project" className="h-[800px] bg-black px-10 md:px-20">
+          <SectionContent className="h-full  flex-col justify-center">
             <FadeInSection>
               <SectionTitle>Project</SectionTitle>
             </FadeInSection>
             <FadeInSection>
               <div className="w-full h-96 flex overflow-auto gap-6">
-                {info.projects.map((project) => (
-                  <ProjectCard key={project.id} name={project.name} image={project.image} description={project.description} />
-                ))}
+                <ProjectCarousel data={info.projects} />
               </div>
             </FadeInSection>
           </SectionContent>
         </section>
-        <section id="contact" className="h-[800px] bg-black px-10 md:px-20 py-20">
+        <section id="contact" className="h-[900px] bg-black px-10 md:px-20 py-20">
           <SectionContent className="flex-col justify-center gap-2 ">
             <SectionTitle>Contact me</SectionTitle>
             <ContactRow title="Phone" content="+84 123456789" />

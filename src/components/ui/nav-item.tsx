@@ -17,7 +17,7 @@ export const NavItem = ({ title, href, selected }: Props) => {
     }
   };
   return (
-    <Link className={`px-4 py-2 ${selected ? 'text-blue-500' : 'text-white'}`} href={href} onClick={handleClick}>
+    <Link className={`px-4 py-2 ${selected ? 'text-yellow-500' : 'text-white'}`} href={href} onClick={handleClick}>
       {title}
     </Link>
   );
