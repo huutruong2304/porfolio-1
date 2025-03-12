@@ -1,18 +1,18 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { NavItem } from '../ui/nav-item';
+const nav: {
+  id: string;
+  name: string;
+}[] = [
+  { id: 'home', name: 'Home' },
+  { id: 'about', name: 'About' },
+  { id: 'skills', name: 'Skills' },
+  { id: 'project', name: 'Projects' },
+  { id: 'contact', name: 'Contact' },
+];
 
 const Header = () => {
-  const nav: {
-    id: string;
-    name: string;
-  }[] = [
-    { id: 'home', name: 'Home' },
-    { id: 'about', name: 'About' },
-    { id: 'skills', name: 'Skills' },
-    { id: 'project', name: 'Projects' },
-    { id: 'contact', name: 'Contact' },
-  ];
   const [activeSection, setActiveSection] = useState<string>();
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const Header = () => {
     handleScroll(); // Initialize on mount
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [nav]);
+  }, []);
 
   return (
     <header className="w-full h-14 fixed top-0 bg-black bg-opacity-80 shadow z-10">

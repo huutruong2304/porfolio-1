@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+import Link from 'next/link';
+import React, { MouseEvent } from 'react';
 
 type Props = {
   title: string;
@@ -7,9 +9,16 @@ type Props = {
 };
 
 export const NavItem = ({ title, href, selected }: Props) => {
+  const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
-    <a className={`px-4 py-2 ${selected ? 'text-blue-500' : 'text-white'}`} href={href}>
+    <Link className={`px-4 py-2 ${selected ? 'text-blue-500' : 'text-white'}`} href={href} onClick={handleClick}>
       {title}
-    </a>
+    </Link>
   );
 };

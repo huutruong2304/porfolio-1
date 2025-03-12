@@ -1,12 +1,13 @@
 import React, { ReactNode } from 'react';
+import FadeInSection from './motion/fade-in-section';
 
 type Props = {
   children: ReactNode;
-  classes?: string;
+  className?: string;
 };
 
-const SectionContent = ({ children, classes }: Props) => {
-  return <div className={`h-full container md:px-20 mx-auto flex ${classes ?? ''}`}>{children}</div>;
+const SectionContent = ({ children, className }: Props) => {
+  return <FadeInSection className={`h-full container md:px-20 mx-auto flex ${className ?? ''}`}>{children}</FadeInSection>;
 };
 
 export default SectionContent;

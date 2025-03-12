@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`scroll-smooth ${oswaldSans.className}`}>
-      <body className={`${oswaldSans}`}>
+      <body className={`${oswaldSans} scroll-smooth`}>
         {children}
         <ScrollToTop />
       </body>
